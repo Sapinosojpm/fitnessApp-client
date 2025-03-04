@@ -1,0 +1,8 @@
+.home-bg {
+    background-image: url(../img/istockphoto-864565358-612x612.jpg); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Ensures text is visible on top of the background */
+  }
+  

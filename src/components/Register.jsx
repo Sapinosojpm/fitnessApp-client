@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, Container, Alert } from "react-bootstrap";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ const Register = () => {
     console.log("API URL:", process.env.REACT_APP_API_URL);
 
     try {
-        const response = await fetch('http://localhost:4000/users/register', {
+        const response = await fetch(`${API_URL}/users/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, Container, Alert } from "react-bootstrap";
+ 
+const API_URL = process.env.REACT_APP_API_URL;
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +26,7 @@ const Login = () => {
 
     try {
       // Send POST request to the backend login endpoint
-      const response = await fetch(`http://localhost:4000/users/login`, {
+      const response = await fetch(`${API_URL}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,6 +2,7 @@
 
 import { createContext, useState, useContext } from "react";
 
+const API_URL = process.env.REACT_APP_API_URL;
 // Create the WorkoutContext
 const WorkoutContext = createContext();
 
@@ -12,7 +13,7 @@ export const WorkoutProvider = ({ children }) => {
   // Function to fetch workouts from the server
   const fetchWorkouts = async () => {
     try {
-      const response = await fetch("http://localhost:4000/workouts/getMyWorkouts", {
+      const response = await fetch(`${API_URL}/workouts/getMyWorkouts`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +35,7 @@ export const WorkoutProvider = ({ children }) => {
   // Function to add a new workout
   const addWorkout = async (workout) => {
     try {
-      const response = await fetch("http://localhost:4000/workouts/addWorkout", {
+      const response = await fetch(`${API_URL}/workouts/addWorkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
